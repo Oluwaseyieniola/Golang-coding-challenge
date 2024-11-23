@@ -36,7 +36,7 @@ func main() {
 	//fileBytesize := int(fileinfo.Size())
 	//fmt.Printf("The size of the file is %d bytes\n", fileBytesize)
 	current_year = time.Now().Year()
-	fmt.Println("Pleae enter your year of birth")
+	fmt.Println("Please enter your year of birth")
 	fmt.Scanln(&birth_year)
 
 	calculate_age(current_year, birth_year)
@@ -112,7 +112,7 @@ func main() {
 
 	// i neither of the tags are provided throw an error
 
-	file, err := os.Open("/Users/ianol/Downloads/test.txt")
+	file, err := os.Open("")
 	if err != nil {
 		fmt.Println(err)
 	}
