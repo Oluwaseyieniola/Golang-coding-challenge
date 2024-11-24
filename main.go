@@ -40,7 +40,7 @@ func main() {
 	fmt.Scanln(&birth_year)
 
 	calculate_age(current_year, birth_year)
-	// define the c and l flags
+	
 	linesCount := flag.String("l", "", "count the number of lines in the file ")
 	wordsCount := flag.String("w", "", "count the number of words in the file")
 	charactercount := flag.String("m", "", "count the number of strings int the file")
@@ -84,25 +84,25 @@ func main() {
 
 		fmt.Printf("the file '%s' include %d words", *&wordsCount, wordsCount)
 	}
-	// check if the  flag is provided then open file for reading
+	
 	if *linesCount != "" {
 		file, err := os.Open(*linesCount)
 		if err != nil {
 			log.Fatal("error opening file %v", err)
 		}
 		defer file.Close()
-		// use scanner to read the lines in each file
+		
 		scanner := bufio.NewScanner(file)
 		linesCount := 0
 		for scanner.Scan() {
 			linesCount++
 		}
-		// check if any errror ocurred during reading
+	
 
 		if err := scanner.Err(); err != nil {
 			fmt.Printf("error reading the file %v", err)
 		}
-		// output the number of line
+	
 		fmt.Printf("The file '%s', include %d lines", filename, linesCount)
 	}
 
@@ -110,7 +110,7 @@ func main() {
 		log.Fatal("Please provide a filepath using -l")
 	}
 
-	// i neither of the tags are provided throw an error
+	
 
 	file, err := os.Open("")
 	if err != nil {
@@ -141,4 +141,4 @@ func calculate_age(current_year int, birth_year int) int {
 	return age
 }
 
-//  output wc command
+
